@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics;
 using System.Linq.Expressions;
 
 namespace YumaKeyencePrinterComm
@@ -42,7 +43,7 @@ namespace YumaKeyencePrinterComm
                     }
                     catch (Exception ex)
                     {
-
+                        Debug.WriteLine(ex);
                     }
                 }
                 Thread.Sleep(50);
