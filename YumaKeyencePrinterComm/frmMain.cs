@@ -9,6 +9,7 @@ namespace YumaKeyencePrinterComm
         public frmMain()
         {
             InitializeComponent();
+            //A new process is started in a background thread so it doesn't blocks form UI and the children threads are killed on form close
             Thread th = new Thread(() =>
             {
                 Listen();
@@ -24,6 +25,7 @@ namespace YumaKeyencePrinterComm
                 {
                     try
                     {
+                        //File mode in readonly and shared so it doesn't block access from another program to modify it
                         using (FileStream fs = new FileStream(txtPath.Text, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
                         {
                             using (StreamReader sr = new StreamReader(fs))
