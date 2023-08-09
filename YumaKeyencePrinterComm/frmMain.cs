@@ -12,6 +12,7 @@ namespace YumaKeyencePrinterComm
             {
                 Listen();
             });
+            th.IsBackground = true;
             th.Start();
         }
         private void Listen()
