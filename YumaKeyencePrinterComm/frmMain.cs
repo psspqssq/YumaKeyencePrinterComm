@@ -31,6 +31,7 @@ namespace YumaKeyencePrinterComm
                                 while ((ln = sr.ReadLine()) != null)
                                 {
                                     string[] parameters = ln.Split('=');
+                                    // Replace "Run Code" with actual parameter
                                     if (parameters[0] == "Run Code")
                                     {
                                         lblCode.Invoke((MethodInvoker)(() => lblCode.Text = parameters[1]));
