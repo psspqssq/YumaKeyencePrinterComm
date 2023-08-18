@@ -8,4 +8,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Corsinvest.AllenBradley.PLC.Api" Version="0.1.7" />
+  </ItemGroup>
+
 </Project>
