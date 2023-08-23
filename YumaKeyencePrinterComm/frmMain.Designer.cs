@@ -33,11 +33,11 @@
             tcMainPanel = new TabControl();
             tabPage1 = new TabPage();
             tabPage2 = new TabPage();
+            txtIP = new TextBox();
+            label3 = new Label();
             txtPath = new TextBox();
             label1 = new Label();
             btnFile = new Button();
-            txtIP = new TextBox();
-            label3 = new Label();
             tcMainPanel.SuspendLayout();
             tabPage1.SuspendLayout();
             tabPage2.SuspendLayout();
@@ -98,13 +98,30 @@
             tabPage2.Text = "Settings";
             tabPage2.UseVisualStyleBackColor = true;
             // 
+            // txtIP
+            // 
+            txtIP.Location = new Point(72, 48);
+            txtIP.Name = "txtIP";
+            txtIP.Size = new Size(160, 23);
+            txtIP.TabIndex = 6;
+            txtIP.TextChanged += txtIP_TextChanged;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(4, 51);
+            label3.Name = "label3";
+            label3.Size = new Size(62, 15);
+            label3.TabIndex = 7;
+            label3.Text = "IP Address";
+            // 
             // txtPath
             // 
             txtPath.Location = new Point(72, 19);
             txtPath.Name = "txtPath";
-            txtPath.ReadOnly = true;
             txtPath.Size = new Size(160, 23);
             txtPath.TabIndex = 3;
+            txtPath.TextChanged += txtPath_TextChanged;
             // 
             // label1
             // 
@@ -123,23 +140,7 @@
             btnFile.TabIndex = 5;
             btnFile.Text = "...";
             btnFile.UseVisualStyleBackColor = true;
-            // 
-            // txtIP
-            // 
-            txtIP.Location = new Point(72, 48);
-            txtIP.Name = "txtIP";
-            txtIP.ReadOnly = true;
-            txtIP.Size = new Size(160, 23);
-            txtIP.TabIndex = 6;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(4, 51);
-            label3.Name = "label3";
-            label3.Size = new Size(62, 15);
-            label3.TabIndex = 7;
-            label3.Text = "IP Address";
+            btnFile.Click += btnFile_Click;
             // 
             // frmMain
             // 
@@ -148,6 +149,7 @@
             ClientSize = new Size(313, 209);
             Controls.Add(tcMainPanel);
             Name = "frmMain";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Printer Settings";
             tcMainPanel.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
